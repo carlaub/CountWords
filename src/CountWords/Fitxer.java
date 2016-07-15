@@ -49,15 +49,14 @@ public class Fitxer {
 				while(scanner.hasNext()){
 					String m = scanner.nextLine();
 					//String [] input = m.split("[ \n\t\r,.;:!?(){}}]");
-					String [] input = m.split("\\W+");
+					String [] input = m.split("[\\W+_]");
 					
 					
 					for(int f = 0; f < input.length; f++) {         
 						String key = input[f].toUpperCase();
 						if(key.length()>0 && key.equals('"') == false) {
 							
-							key = key.replaceAll("_", "");
-							//key = key.replaceAll("'", "");
+							
 							
 							llistaOrd.LLISTAORD_add(key);
 						}
@@ -74,6 +73,7 @@ public class Fitxer {
 				
 				System.out.println("MEM INICI: " + freeMemoryInici);
 				System.out.println("MEM FI: " + freeMemoryFi);
+				
 				System.out.println("MEM UTILITZADA: " + Resultat.getMemoria());
 				System.out.println("TEMPS: "+ Resultat.getTemps());
 				System.out.println("\n\nLEEMOS DE LA LISTA");
@@ -99,14 +99,14 @@ public class Fitxer {
 				while(scanner.hasNext()){
 					String m = scanner.nextLine();
 					
-					String [] input = m.split("\\W+");
+					String [] input = m.split("[\\W+_]");
 					
 					
 					for(int f = 0; f < input.length; f++) {    
 						
 						String key = input[f].toUpperCase();
 						if(key.length()>0 && key.equals('"') == false) {
-							key = key.replaceAll("_", "");
+							
 							
 							
 							//Inserim
@@ -127,6 +127,7 @@ public class Fitxer {
 				
 				System.out.println("MEM INICI: " + freeMemoryInici);
 				System.out.println("MEM FI: " + freeMemoryFi);
+				System.out.println(freeMemoryInici - freeMemoryFi);
 				System.out.println("MEM UTILITZADA: " + Resultat.getMemoria());
 				System.out.println("TEMPS: "+ Resultat.getTemps());
 				

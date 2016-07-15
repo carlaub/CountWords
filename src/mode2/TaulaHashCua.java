@@ -26,11 +26,11 @@ public class TaulaHashCua {
 		lletra = paraula.charAt(0);
 		
 		if (lletra >= 'A' && lletra <= 'Z') {
-			System.out.println(lletra - 'A');
-			return (lletra - 'A');
+			System.out.println(lletra - 'A' + 1);
+			return (lletra - 'A' + 1);
 		}
-		System.out.println("26");
-		return 26;
+		System.out.println("0");
+		return 0;
 		
 	}
 	

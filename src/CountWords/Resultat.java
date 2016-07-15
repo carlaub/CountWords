@@ -12,7 +12,7 @@ public class Resultat {
 		return temps;
 	}
 	
-	public static float getMemoria() {
+	public static long getMemoria() {
 		return memoria;
 	}
 	
