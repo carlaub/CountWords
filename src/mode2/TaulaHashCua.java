@@ -29,21 +29,13 @@ public class TaulaHashCua {
 			System.out.println(lletra - 'A' + 1);
 			return (lletra - 'A' + 1);
 		}
-		System.out.println("0");
+		//System.out.println("0");
 		return 0;
 		
 	}
 	
 	public void TAULAHASHCUA_inserir(String paraula, int clau) {
 		taulaHashCua[clau].LLISTAORD_add(paraula);
-	}
-	
-	public Node TAULAHASHCUA_get() {
-		int posicio = 0; 
-		while (taulaHashCua[posicio].LLISTAORD_buida()) {
-			posicio++;
-		}
-		return taulaHashCua[posicio].LLISTAORD_get();
 	}
 	
 	public boolean TAULAHASHCUA_buida() {
@@ -56,5 +48,30 @@ public class TaulaHashCua {
 		}
 		return true;
 	}
+	
+	public Node TAULAHASHCUA_get() {
+		int posicio = 0; 
+		while (taulaHashCua[posicio].LLISTAORD_buida()) {
+			posicio++;
+		}
+		return taulaHashCua[posicio].LLISTAORD_get();
+	}
+	
+	public Node TAULAHASHCUA_getOrdApa() {
+		int posicio = 0;
+		Node max = new Node();
+		max.setAparicions(-1);
+		Node aux = null;
+		while (posicio < taulaHashCua.length) {
+			aux = taulaHashCua[posicio].LLISTAORD_getMaxApa();
+			if(aux != null && aux.getAparicions() > max.getAparicions()) {
+				max = aux;
+			}
+			posicio ++;
+		}
+		return max;
+	}
+	
+	
 
 }

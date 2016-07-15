@@ -71,9 +71,9 @@ public class Resultat {
 				switch(opcioVisualitza) {
 					case 1:
 						while(!taulaHashCua.TAULAHASHCUA_buida()) {
-							Node node = taulaHashCua.TAULAHASHCUA_get();
-							System.out.println(node.getNom());
-							System.out.println(node.getAparicions());
+							Node node = taulaHashCua.TAULAHASHCUA_getOrdApa();
+							fitxer.afegeixCodi("<tr><td>" + posicio +"</td><td>" + node.getNom() + "</td><td>" + node.getAparicions() + "</td></tr>" );
+							posicio ++;
 						}
 						break;
 					case 2:

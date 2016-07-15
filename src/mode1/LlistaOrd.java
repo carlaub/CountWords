@@ -74,7 +74,7 @@ public class LlistaOrd {
 		//Hem de recorre l'estructura cercant l'element amb el maxim d'aparicions
 		
 		if (tamany == 0) {
-			System.out.println("Cua buida!");
+			//System.out.println("Cua buida!");
 		} else {
 			aux = pri;
 			while (aux.getSeg() != null) {
