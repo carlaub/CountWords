@@ -2,6 +2,8 @@ package CountWords;
 
 import mode1.Node;
 import mode2.TaulaHashCua;
+import mode3.MaxHeap;
+import mode3.NodeMaxHeap;
 import mode1.LlistaOrd;
 
 public class Resultat {
@@ -87,8 +89,33 @@ public class Resultat {
 						break;
 				}
 				break;
+				
 			case 3:
+				//MaxHeap
+				MaxHeap maxHeap = (MaxHeap) ultExecucio;
+				
+				switch(opcioVisualitza) {
+					case 1:
+						while (!maxHeap.MAXHEAP_buit()){
+							NodeMaxHeap node = maxHeap.MAXHEAP_esborra();
+							fitxer.afegeixCodi("<tr><td>" + posicio +"</td><td>" + node.getParaula() + "</td><td>" + node.getAparicions() + "</td></tr>" );
+							posicio ++;	
+						}
+						
+						break;
+					case 2:
+						int midaAux = 0;
+						while (midaAux < maxHeap.MAXHEAP_getMida()) {
+							NodeMaxHeap node = maxHeap.MAXHEAP_getOrdreAlfabetic();
+							midaAux++;
+							
+							fitxer.afegeixCodi("<tr><td>" + posicio +"</td><td>" + node.getParaula() + "</td><td>" + node.getAparicions() + "</td></tr>" );
+							posicio ++;	
+						}
+						break;
+				}
 				break;
+				
 			case 4:
 				break;
 		}

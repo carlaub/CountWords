@@ -10,7 +10,7 @@ import mode1.Node;
  *  
  *  funcio de hash -> posicio = primera lletra de la paraula - 'a'
  *  
- * @author karlaurrea
+ * @author carlaurrea
  *
  */
 public class TaulaHashCua {

@@ -8,6 +8,8 @@ import java.util.TreeMap;
 import mode1.LlistaOrd;
 import mode1.Node;
 import mode2.TaulaHashCua;
+import mode3.MaxHeap;
+import mode3.NodeMaxHeap;
 
 
 public class Fitxer {
@@ -135,7 +137,62 @@ public class Fitxer {
 
 				
 			case 3:
-				return null;
+
+				//Creem el maxHeap
+		        MaxHeap maxHeap = new MaxHeap(20000);
+
+				
+				//Comencem a comptar le temps
+				tempsInici =System.currentTimeMillis();
+				
+				//Guardem la memoria lliure
+				runtime = Runtime.getRuntime();
+				freeMemoryInici = runtime.freeMemory();
+				
+				while(scanner.hasNext()){
+					String m = scanner.nextLine();
+					
+					String [] input = m.split("[\\W+_]");
+					
+					
+					for(int f = 0; f < input.length; f++) {    
+						
+						String key = input[f].toUpperCase();
+						if(key.length()>0 && key.equals('"') == false) {
+							
+							
+							
+							//Inserim
+							maxHeap.MAXHEAP_insertar(new NodeMaxHeap(1, key));
+
+						}
+					}
+				}   
+				
+				//Proba pintem
+				/*maxHeap.maxHeap();
+				maxHeap.MAXHEAP_pintaMaxHeap();*/
+				
+				/*while (!maxHeap.MAXHEAP_buit()) {
+					System.out.println("EL MAX: " + maxHeap.MAXHEAP_esborra().getAparicions());
+				}*/
+				
+				//Guardem el temps d'execucio
+				Resultat.setTemps(System.currentTimeMillis() - tempsInici);
+				
+				//Guardem memoria emprada
+				freeMemoryFi = runtime.freeMemory();
+				System.out.println("MEMORIA:" + (freeMemoryInici - freeMemoryFi));
+				Resultat.setMemoria(freeMemoryInici - freeMemoryFi);
+				
+				System.out.println("MEM INICI: " + freeMemoryInici);
+				System.out.println("MEM FI: " + freeMemoryFi);
+				System.out.println("MEM UTILITZADA: " + Resultat.getMemoria());
+				System.out.println("TEMPS: "+ Resultat.getTemps());
+				
+				return maxHeap;
+				
+				
 			case 4:
 				TreeMap <String, Integer> myMap  = new TreeMap <String, Integer> ();
 

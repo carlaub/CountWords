@@ -35,7 +35,7 @@ public class Menu {
 		System.out.println("-> Selecciona mode: ");
 		System.out.println("Mode 1: Cua ordenada");
 		System.out.println("Mode 2: Taula Hash amb Cua");
-		System.out.println("Mode 3");
+		System.out.println("Mode 3: Max Heap");
 		System.out.println("Mode 4");
 		
 		Scanner sc = new Scanner(System.in);
